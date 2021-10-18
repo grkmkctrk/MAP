@@ -56,8 +56,6 @@ int main(){
 /*
     EX 3
 
-    EX 3
-*/
 
 #include "utilityClass.hpp"
 
@@ -79,4 +77,76 @@ int main(){
     
 
     return 0; 
+}
+    EX 3
+*/
+
+/*
+    EX 4
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    map<int, string> ismap;
+
+    cfill(ismap, 10);
+
+    cdisplay(ismap);
+
+    return 0;
+}
+    EX 4
+*/
+
+/*
+    Ex 5
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    // map<int, string> ismap;
+    // map<int, string, less<int>> ismap; there is no difference with the code above
+
+    map<int, string, greater<int>> ismap;
+
+
+    cfill(ismap, 10);
+    cdisplay(ismap);
+
+    return 0;
+}
+    Ex 5
+*/
+
+/*
+    Ex 6
+    Ex 6
+*/
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    // map<int, string, myLess<int>> ismap;
+    map<int, string, myGreater<int>> ismap;
+    
+
+    cfill(ismap, 10);
+    cdisplay(ismap);
+
+    return 0;
 }
