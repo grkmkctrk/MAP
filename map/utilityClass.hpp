@@ -59,4 +59,54 @@ class myGreater{
     }
 };
 
+template<class T, class U>
+void cdisplayMap(const std::map<T, U>& con){
+    for (/*typename std::map<T,U>::const_iterator*/ 
+    auto iter = con.begin(); 
+    iter != con.end(); 
+    std::cout << iter->first << " " << iter->second << std::endl,
+    iter++); std::cout << std::endl;   
+}
+
+
+template<class U, class T>
+void eraseVal(std::map<U, T>& con, const T& val){
+    // auto iter = con.begin();
+    // while(iter != con.end()){
+    //     if(iter->second == val){
+    //         con.erase(iter++);
+    //     }++iter;
+    // }
+
+    for(
+        auto iter = con.begin();
+        iter != con.end();
+        (iter->second == val) ? con.erase(iter++) : iter++
+    );
+}
+
+
+template<class T, class U>
+auto findValCon(std::map<T, U>& con, const U& val){
+    auto iter = con.begin();    
+
+    while(iter != con.end()){
+        if(iter->second == val) return iter;
+        else iter++;
+    }std::cout << "iter is not found " << std::endl; return iter;
+}
+
+template<class T, class U>
+auto findValIt(
+    T first, 
+    T last,
+    const U& val){
+    auto iter = first;    
+
+    while(iter != last){
+        if(iter->second == val) return iter;
+        else iter++;
+    }std::cout << "iter is not found " << std::endl; return iter;
+}
+
 #endif

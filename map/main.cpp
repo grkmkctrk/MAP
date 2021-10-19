@@ -129,8 +129,6 @@ int main(){
 
 /*
     Ex 6
-    Ex 6
-*/
 
 
 #include "utilityClass.hpp"
@@ -148,5 +146,146 @@ int main(){
     cfill(ismap, 10);
     cdisplay(ismap);
 
+    return 0;
+}
+    Ex 6
+*/
+
+/*
+    Ex 8
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(void){
+    
+    map<int, string, myGreater<int>> ismap;
+   
+    cfill(ismap, 10);
+
+    cdisplay(ismap);
+
+    return 0;
+}
+    Ex 8
+*/
+
+/*
+    Ex 9
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(void){
+    
+    map<string, int> simap;
+   
+    for (size_t i = 0; i < 10; i++){
+        simap.insert(make_pair(srandom(), irandom()));
+    }
+    
+
+    cdisplayMap(simap);
+
+    string s;
+    cout << "the data : "; cin >> s;
+    map<string, int>::iterator iter = simap.find(s);
+
+    if (iter == simap.end()) cout << "not found" << endl;
+    else iter->second = 198; cdisplayMap(simap);
+    
+
+    return 0;
+}
+    Ex 9
+*/
+
+/*
+    EX 10
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(void){
+    
+    map<int, string> ismap;
+   
+    for (size_t i = 0; i < 10; i++){
+        ismap.insert(make_pair(irandom(), srandom()));
+    }
+    
+
+    cdisplayMap(ismap);
+
+    int s;
+    cout << "the data : "; cin >> s;
+    map<int, string>::iterator iter = ismap.find(s);
+
+    if (iter == ismap.end()) cout << "not found" << endl;
+    else iter->second = "naber"; cdisplayMap(ismap);
+    
+
+    return 0;
+}
+    EX 10
+*/
+
+/*
+    EX 11
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(void){
+    
+    map<string, int> simap;
+   
+    for (size_t i = 0; i < 10; i++){
+        simap.insert(make_pair(srandom(), irandom()));
+    }
+    
+    cout << "old map" << endl;
+    cdisplayMap(simap);
+
+    int s;
+    cout << "the data : "; cin >> s;
+    
+    eraseVal(simap, s);
+    
+    cout << "new map" << endl;
+    cdisplayMap(simap);
+
+    return 0;
+}
+    EX 11
+*/
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(void){
+    
+    map<string, int> simap;
+   
+    for (size_t i = 0; i < 10; i++){
+        simap.insert(make_pair(srandom(), irandom()));
+    }
+    
+    cdisplayMap(simap);
+
+    int s;
+    cout << "the data : "; cin >> s;
+    
+    //auto found = findValCon(simap, s);
+
+    auto found = findValIt(
+        simap.begin(), 
+        simap.end(), 
+        s);
+    cout << found->first << " " << found->second << endl;
+    
     return 0;
 }
